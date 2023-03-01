@@ -1,0 +1,11 @@
+{
+    "avg_age": 34.4375,
+    "hair_colors": {
+        "Brown": 6,
+        "Blonde": 3,
+        "Black": 2,
+        "Gray": 2,
+        "Red": 3
+    },
+    "count": 16
+}
