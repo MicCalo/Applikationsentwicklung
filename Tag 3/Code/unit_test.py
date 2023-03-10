@@ -29,6 +29,9 @@ class TestCalculateAverage(unittest.TestCase):
     def test_when_average_is_2_then_2(self):
         self.assertEqual(calculate_age_average({'a':{'Age':1}, 'b':{'Age':2}, 'c':{'Age':3}}), 2.0)
 
+    def test_when_age_not_float_then_raises(self):
+        with self.assertRaises(ValueError):
+            calculate_age_average({'a':{'Age':'?'}})
 
 if __name__ == '__main__':
     unittest.main()
