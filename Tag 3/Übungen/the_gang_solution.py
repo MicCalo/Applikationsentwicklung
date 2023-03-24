@@ -17,7 +17,7 @@ def read_json(file_name='Übungen/the_gang.json'):
 def calculate_age_average(people_dict):
     """Function to calculate the average age. people_dict is expected to be a dictionary with sub-dictionaries which contains 'Age'."""
     sum = 0.0
-    for  person in people_dict.values():
+    for person in people_dict.values():
         age = float(person['Age'])  # fetch Age of that person
         sum += age                  # sum up Age
 
@@ -31,7 +31,7 @@ def get_hair_colors(people_dict):
         hair_color = person['Hair']                       # fetch hair color
         
         if hair_color in result:                          # if hair color is already 'registered'...
-            result[hair_color] = result[hair_color] +  1  # ... then increment its counter by 1
+            result[hair_color] = result[hair_color] + 1   # ... then increment its counter by 1
         else:            
             result[hair_color] = 1                        # otherwise, start its counter
 
@@ -58,7 +58,7 @@ def main():
     }
 
     with open('Übungen/.results_the_gang.json', 'w') as output_file:
-        json.dump(results, output_file, indent=4)
+        json.dump(results, output_file)
 
 
 if __name__ == '__main__':

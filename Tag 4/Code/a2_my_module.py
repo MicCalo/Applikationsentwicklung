@@ -22,7 +22,10 @@ class MyClass:
 
 print(f"imported {__name__}")
 
-if __name__ == '__main':
+if __name__ == '__main__':
+    test = my_adding_function(3, 5)
+    print(test)
+
     test = MyClass('hallo')
     print(test)
 
