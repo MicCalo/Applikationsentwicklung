@@ -28,7 +28,7 @@ def demo_finally(value):
     except ValueError:
         print("ValueError occurred")
     finally:
-        print("open resource")
+        print("close resource")
        
 
 def demo_finally_real():
@@ -47,7 +47,7 @@ def demo_finally_real():
         if 'input_file' in locals() and input_file:
             input_file.close()
 
-def my_function(number: int):
+def my_function(number):
     if not isinstance(number, int):
         raise TypeError("'number' must be a int")
     if number < 0:
@@ -55,9 +55,8 @@ def my_function(number: int):
     return number + 1
 
 if __name__ == '__main__':
-    demo1()
+    demo_finally("hallo")
     
-
-    #print(my_function(1))   
-    #print(my_function("foo bar")) 
-    #print(my_function(-42))
+    print(my_function(1))   
+    print(my_function("foo bar")) 
+    print(my_function(-42))
