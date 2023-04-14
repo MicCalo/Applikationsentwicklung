@@ -136,3 +136,5 @@ dmypy.json
 
 # generated data files
 **/Data/.*
+
+small_shop_demo.db

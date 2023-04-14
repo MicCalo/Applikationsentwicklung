@@ -1,0 +1,29 @@
+USE small_shop_demo;
+
+/* DROP in reverse order because of foreign key constraints */
+DROP TABLE IF EXISTS Shipments;
+DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Customers;
+
+CREATE TABLE Customers(
+    Id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(255) NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    Address VARCHAR(1000) NOT NULL,
+    City VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Orders(
+    Id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    CustomerId INTEGER NOT NULL,
+    OrderDate DATETIME NOT NULL,
+    FOREIGN KEY (CustomerId) REFERENCES Customers(Id)
+);
+
+
+CREATE TABLE Shipments(
+    Id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    OrderId INTEGER NOT NULL,
+    ShipmentDate DATETIME NOT NULL,
+    FOREIGN KEY (OrderId) REFERENCES Orders(Id)
+);
