@@ -12,14 +12,15 @@ root.title('Grid Demo')
 
 # configure the grid
 root.columnconfigure(0, weight=1)
-root.columnconfigure(1, weight=5)
+root.columnconfigure(1, weight=2)
 
 root.rowconfigure(0, weight=1)
 root.rowconfigure(1, weight=1)
 
-tk.Label(root, text="A1", bg="blue").grid(column=0, row=0, padx=5, sticky=tk.EW)
-tk.Label(root, text="B1", bg="green").grid(column=1, row=0, sticky = 'EW')
-widgets.Label(root, text="A2 länger längerlängerlänger").grid(column=0, row=1)
-widgets.Label(root, text="B2").grid(column=1, row=1)
+tk.Label(root, text="A1", bg="blue").grid(column=0, row=0, ipadx=10, sticky=tk.NS)
+tk.Label(root, text="B1", bg="green").grid(column=1, row=0,)
+tk.Label(root, text="A2", bg="yellow").grid(column=0, row=1, padx=5, sticky=tk.EW)
+tk.Label(root, text="B2", bg="red").grid(column=1, row=1, sticky = 'EW')
+
 
 root.mainloop()

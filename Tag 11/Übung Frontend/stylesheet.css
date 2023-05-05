@@ -1,0 +1,24 @@
+span {
+    margin-left: 10px;
+    margin-top: 3px;
+    display: block;
+}
+
+/* we could also revert effect of elements like e.g. <b> by setting weight back to 100 (%), but who would do this?
+b{
+    font-weight: 100;
+}
+*/
+
+.my_class{
+    background-color: rgb(190, 190, 190);
+    color: navy;
+}
+
+#span1{
+    border-bottom: solid red 2px;
+}
+
+#span2{
+    text-decoration:underline green 2px;
+}    

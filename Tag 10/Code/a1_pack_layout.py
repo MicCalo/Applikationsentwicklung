@@ -13,10 +13,10 @@ box1.pack()
 
 # box 2
 box2 = tk.Label(root, text="Box 2", bg="red", fg="white")
-box2.pack(ipadx=15, ipady=5, fill=tk.BOTH, expand=True)
+box2.pack(ipadx=15, ipady=5, fill=tk.Y, expand=True)
 
 # box 3
 box3 = tk.Label(root, text="Box 3 langer text", bg="blue", fg="white")
-box3.pack(expand=True, anchor=tk.NW)
+box3.pack(expand=True, anchor=tk.E, fill=tk.BOTH)
 
 root.mainloop()
