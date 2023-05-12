@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- page header, usually the tab name in the browser -->
+    <title>Advanced Template based HTML</title>
+
+    <!-- 'include' of CSS file -->
+    <link rel="stylesheet" href="../static/stylesheet.css" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Java Script (embedded in HTML) -->
+    <script type="text/javascript">
+        // this function puts the current date/time in the element with id 'browser-timestamp'
+        function update_current_browser_time() {
+            var today = new Date()
+            document.getElementById("browser-timestamp").innerHTML = today.toLocaleString();
+        }
+    </script>
+</head>
+
+<body onload="update_current_browser_time()"><!-- JavaScript 'event binding': on load of the body element, invoke the function update_current_browser_time() -->
+    <header>
+        <a class="button" href="" onclick="window.location.reload(true)">reload page</a>
+        <a class="button" href="" onclick="update_current_browser_time()">update current time</a>
+        {% if with_logout %}
+        <a class="button" href="/logout">logout</a>
+        {% endif %}
+        <span>Client time:</span>
+        <span id="browser-timestamp"></span>
+    </header>
+    <h1>Advances Sessions Demo</h1>
+    <p>&#x2B50;Seasons greetings <b>{{name|escape}}</b>&#x1F332;</p>
+
+    <!-- all_data is a list of dictionaries -->
+    {% for part in all_data %}
+
+    <h2>{{part['title']|escape}}</h2>
+    <!-- each  dictionary has two entries: 'title' which is a string and 'data', which is another dictionary -->
+    {% if part['data']|length > 0 %}
+    <table>
+        <tr>
+            <th>Key</th>
+            <th>Value </td>
+        </tr>
+        {% for key, value in part['data'].items() %}
+        <tr>
+            <td>{{key|escape}}</th>
+            <td>{{value|escape}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    &lt;empty&gt;
+    {% endif %}
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- page header, usually the tab name in the browser -->
+    <title>Template based HTML</title>
+
+    <!-- 'include' of CSS file -->
+    <link rel="stylesheet" href="../static/stylesheet.css" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <h1>{{info.title|escape}}</h1> 
+    <table>
+        <tr>
+            <th>Key</th>
+            <th>Value </td>
+        </tr>
+        {% for key in info.keys %}
+        <tr>
+            <td>{{key|escape}}</th>
+            <td>{{info.get_info(key)|escape}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+   
+</body>
+
+</html>
